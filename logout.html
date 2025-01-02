@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background: url(./img/logoutBG.webp) no-repeat center center/cover;
+    }
+
+    .logout-container {
+      text-align: center;
+      padding: 20px 30px;
+      background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logout-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .rating-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .rating-container input {
+      display: none;
+    }
+
+    .rating-container label {
+      font-size: 2em;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .rating-container input:checked ~ label,
+    .rating-container input:hover ~ label {
+      color: #ffcc00;
+    }
+
+    .rating-container input:checked + label ~ label {
+      color: #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #1C2541;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      opacity: 0.5;
+      pointer-events: none; /* Disable button initially */
+      transition: opacity 0.3s ease, background 0.3s ease;
+    }
+
+    button.enabled {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    button.permanent {
+      background: #28a745 !important; /* Green background for 5-star rating */
+      pointer-events: auto; /* Ensure it remains clickable */
+      opacity: 1;
+    }
+
+    button:hover {
+      background: #163050;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-container">
+    <h2>Rate Your Experience</h2>
+    <div class="rating-container">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1">★</label>
+    </div>
+    <button id="logout-button" disabled>Logout</button>
+  </div>
+
+  <script>
+    const ratingInputs = document.querySelectorAll('input[name="rating"]');
+    const logoutButton = document.getElementById('logout-button');
+
+    ratingInputs.forEach(input => {
+      input.addEventListener('change', function () {
+        const selectedRating = document.querySelector('input[name="rating"]:checked').value;
+
+        if (selectedRating === "5") {
+          // Make the button permanent with green background
+          logoutButton.classList.add('permanent');
+          logoutButton.disabled = false;
+        } else {
+          // Enable the button temporarily for other ratings
+          logoutButton.classList.add('enabled');
+          logoutButton.classList.remove('permanent');
+          logoutButton.disabled = false;
+        }
+      });
+    });
+
+    logoutButton.addEventListener('click', function () {
+      const selectedRating = document.querySelector('input[name="rating"]:checked').value;
+      alert(`You rated ${selectedRating} stars. You have been logged out.`);
+      window.location.href = 'login.html'; // Redirect to the login page
+    });
+  </script>
+</body>
+</html>

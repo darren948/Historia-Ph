@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/solaris.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Team Solaris</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="./img/solaris.webp" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Header Text -->
+        <div class="header-text">
+            <h1>HISTORIA PH</h1>
+            <p1>Unveiling the rich history of the Philippines</p1>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" id="search" placeholder="Search about history of the Philippines?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()"></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result</h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the history you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/tabon.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Tabon Cave </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/map.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Between 1565 - 1898 </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/revolution.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Philippine Revolution</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/american.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>American Colonization</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/independence.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Independence </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/apolinario.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Apolinario Mabini</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/mercilo.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Marcelo H. del Pilar </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/macario.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Macario Sakay</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/emilio.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Emilio Aguinaldo</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/bonifacio.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Andrés Bonifacio</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/jose.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>José Rizal</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">INFORMATION</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Tabon Cave</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Tabon Cave</h3>
+                        <p class="meal-descript-about">The Tabon Caves is a cave system located in Lipuun Point, Panitian, Quezon, Palawan in the Philippines. Dubbed as the country's "cradle of civilization", it is a site of archaeological importance due to the number of jar burials and prehistoric human remains found starting from the 1960s, most notably the Tabon Man. The system is a part of the Lipuun Point Reservation, which has been protected by the Philippine government as a museum reservation to protect the caves and its immediate vicinity from deforestation and to preserve the cultural artiFACTs present there.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT  </h3>
+                        <p><br>Earliest cave uses included inhabitation, and the Factory like production of stone tools. According to a video by Dr. Fox, a jar burial period began 3000 years ago and lasted until 1500 years ago. This is evidence the area became dominated by people known as the Sa Huỳnh culture.
+
+                            The Sa Huynh adorned their dead with agate, carnelian, and glass beads from India and Iran. Artifact of this nature, including glass bracelets, were found in the cave and are displayed at the Palawan Cultural Museum in Puerto Princesa.
+                            
+                            A migration of Sa Huyhn people to Vietnam is accepted by most experts to have been the forebears of the Cham people. These are a people still existing today that created an empire known as Champa.
+                            
+                            History of the people in the area took on a new significance in modern times owing to the Spratly Islands dispute.
+                        </p>
+                        <h3>INFORMATION </h3>
+                        <p><br>The caves are named after the Tabon scrubfowl. It is bordered on the south by the town proper of Quezon, Panitian on the west, and the South China Sea on the north and east. 
+                                Out of 215 known caves, 29 have been fully explored, with seven of them publicly accessible. Other excavated, unexamined remains are stored onsite. 
+                                In 2006, the site, collectively named as Tabon Cave Complex and all of Lipuun, was added to the tentative list of the Philippines for future UNESCO World Heritage Site nomination.
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/tabon.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/22ftmv9j" class="meal-link-btn">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Spanish Colonization (1565 - 1898)</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About 1565 - 1898</h3>
+                        <p class="meal-descript-about">The history of the Philippines from 1565 to 1898 is known as the Spanish colonial period, 
+                            during which the Philippine Islands were ruled as the Captaincy General of the Philippines within the Spanish East Indies, 
+                            initially under the Viceroyalty of New Spain, 
+                            based in Mexico City, until the independence of the Mexican Empire from Spain in 1821. 
+                            This resulted in direct Spanish control during a period of governmental instability there.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT</h3>
+                        <p><br>1. 1521 - Portuguese explorer Ferdinand Magellan, sailing under the Spanish flag, arrives in the Philippines and claims the islands for Spain. He is killed at the Battle of Mactan by Lapu-Lapu, the chieftain of Mactan Island, marking the first resistance against Spanish colonization.
+                            <br>2. 1565 - Miguel López de Legazpi arrives and establishes the first Spanish settlement in Cebu, beginning formal Spanish colonization.
+                            <br>3. 1571 - Legazpi conquers Manila, which becomes the capital of the Spanish Philippines and a central hub for trade and government. Manila-Acapulco Galleon Trade starts, linking the Philippines to Mexico and Spain and making Manila a significant trade center for over two centuries.
+                            <br>4. 1600s to 1700s - Why it missing because the spanish its rebellions, scheming, war, battles, and conquest yep if you find missing then don't worry its skipping to timeline that time the philipphines its known to other country and because hard to find they though its trouble to go.
+
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Missionary Efforts - Spanish friars and missionaries begin converting indigenous populations to Christianity. The Spanish build numerous churches, which serve as both religious and community centers, helping to spread Catholicism, which becomes deeply rooted in Filipino culture.
+                            <br>2. Political Organization - The Spanish divide the country into provinces and towns (pueblos) and establish the encomienda system, where local leaders are given control over land and people. The system eventually transitions to haciendas, large agricultural estates often controlled by Spanish landlords
+                            <br>3. Education and Language: Missionaries introduce schools and religious education, teaching local populations to read and write in Spanish and spreading the Spanish language and Western educational practices.
+                            <br>4. Economic Developments: Spanish colonial policies initially focus on resource extraction and tribute collection. Over time, they shift towards cash crops, leading to the rise of plantations for tobacco, sugar, and abaca (Manila hemp).
+                            <br>5. Galleon Trade Decline: By the late 1700s, the Manila-Acapulco Galleon Trade declines, and local industries begin developing. Economic growth remains limited, with wealth concentrated in the hands of a few Spanish and mestizo elites.
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/map.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/32ecp4mz" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Philippine Revolution</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Philippine Revolution</h3>
+                        <p class="meal-descript-about">Filipino independence struggle that, after more than 300 years of Spanish colonial rule, exposed the weakness of Spanish administration but failed to evict Spaniards from the islands. 
+                            The Spanish-American War brought Spain’s rule in the Philippines to a close in 1898 but precipitated the Philippine-American War, a bloody war between Filipino revolutionaries and the U.S. Army.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br><br>1. By 1892 it became obvious that Spain was unwilling to reform its colonial government. Andres Bonifacio, a self-educated warehouse clerk, organized a secret revolutionary society, the Katipunan, in Manila
+                            <br>2. In March 1897 leadership of the revolution passed to a young general, Emilio Aguinaldo, who had Bonifacio shot for alleged sedition. 
+                            <br>3. On December 15, 1897, the pact of Biak-na-Bato was proclaimed. Though its precise terms have been a matter of impassioned debate ever since, the pact brought a temporary end to the Philippine Revolution
+
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. The Philippine Revolution took place from 1896 to 1898
+                           <br>2. The Katipunan, a secret society led by Andrés Bonifacio, organized the revolution. Bonifacio is often called "The Father of the Philippine Revolution".
+                           <br>3. The revolution's goals were to create an independent Philippines and promote nationalist goals of freedom, independence, and equality.
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/revolution.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/uax27ycy" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">American Colonization</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About American Colonization</h3>
+                        <p class="meal-descript-about">The history of the Philippines from 1898 to 1946 is known as the American colonial period, and began with the outbreak of the Spanish–American War in April 1898
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. Crisis Phase (December 10, 1898-October 31, 1899): The United States government formally acquired the Philippines from Spain with the signing of the Treaty of Paris on December 10, 1898
+                            <br>2. Conflict Phase (November 1, 1899-April 13, 1902):  Emilio Aguinaldo led a rebellion against the U.S. military government in the Philippines beginning on November 1, 1899. 
+                            <br>3. Post-Conflict Phase (April 17, 1902-June 15, 1913):  U.S. government troops commanded by Colonel Frank Baldwin clashed with Moros near Bayan on the island of Mindanao on May 2, 1902, resulting in the deaths of some 350 Moros and eleven U.S. soldiers.  The U.S. Congress approved the Philippines Act on July 1, 1902, which provided the Philippines with limited self-government
+                            <br>4. Post-Crisis Phase (June 16, 1913-December 7, 1941):  Francis Harrison was sworn in as U.S. governor of the Philippines on August 21, 1913.  Legislative elections were held on June 6, 1916, and the Nationalist Party (Partido Nacionalista,- PN) won 75 out of 90 seats in the House of Representatives
+                            <br>5. Crisis Phase (December 8, 1941-October 17, 1945):  Japanese military aircraft attacked the U.S. government’s Clark airfield in the Philippines on December 8, 1941, resulting in the deaths of 80 U.S. military personnel. 
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. The Spanish–American War began in April 1898, and the Treaty of Paris was signed in December 1898, ceding the Philippines to the United States.
+                            <br>2. The Philippine–American War was a brutal conflict that lasted from 1899–1902. The war resulted in many civilian deaths, and the U.S. military government implemented policies that included burning villages, civilian reconcentration, and torture.
+                            <br>3. Reforms - The U.S. established a civil government and implemented reforms in areas such as education, health, and the economy.
+                            <br>4. Independence - The U.S. promised to withdraw at the end of the transition period, which included the constitution of a Commonwealth from 1935–1946. The Philippines formally gained independence from the U.S. on July 4, 1946
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/american.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/5dahnj47" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Post-Independence Era</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">Post-Independence Era</h3>
+                        <p class="meal-descript-about">The 4th of July used to be considered an important national holiday in the Philippines. Not because it was the United States’ birthday, but because it was Philippine Independence Day in 1946. Seventy five years ago, the Philippines was recognized as an independent, sovereign country by the United States, which withdrew its authority over the archipelago as colonizer.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. The Philippines had been a Spanish colony since 1565, and since that time numerous revolts broke out challenging Spanish rule. These revolts were disunited, however, until the nineteenth century when nationalism brought forth a more united anti-colonial movement. This culminated in a revolution that broke out in 1896. After much fighting, a stalemate ensued, leading to a ceasefire agreement between Filipino and Spanish leaders.
+                            <br>2. Quezon, the dominant political leader in the Philippines at that time, believed he could influence the new American president, Franklin D. Roosevelt, and the Democratic congress to rectify his main objections in a new Philippine independence bill.
+                            <br>3. Prior to the establishment of the Philippine Commonwealth, a constitution had to be drafted. A constitutional convention was thus elected, and finished its draft in February 1935.
+                            <br>4. It was approved in a nationwide plebiscite, and national elections for the new government were held in September 1935.
+                            <br>5. The Philippine Commonwealth was formally inaugurated on November 15, 1935, an unprecedented world event in which the United States, a colonial power, was preparing to let go of its colony. The ramifications were keenly felt among other colonial governments and colonized people.
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Reconstruction - The United States assisted in the reconstruction of the Philippines after the war.
+                            <br>2. Huk Rebellion - A communist-inspired rebellion that complicated the recovery efforts from 1945–1953. President Ramon Magsaysay was able to successfully suppress the rebellion.
+                            <br>3. Domestic reform - Presidents Carlos P. Garcia and Diosdado Macapagal implemented domestic reform programs
+                            <br>4. President Ferdinand E. Marcos declared martial law in 1972, citing growing lawlessness and rebellion. He ruled by decree and popular referenda, suppressing democratic institutions and civil liberties
+                            <br>5. The People Power Revolution drove Marcos from power and led to the presidency of Corazon Aquino.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/independence.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/mfmja4yh" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Apolinario Mabini</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Apolinario Mabini y Maranán</h3>
+                        <p class="meal-descript-about">Was a pivotal figure in Philippine history, renowned for his roles as a revolutionary leader, educator, lawyer, and statesman.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. Mabini served as a legal and constitutional adviser to the Revolutionary Government. He drafted decrees and edited the constitution for the First Philippine Republic
+                            <br>2. On January 23, 1899, Mabini was appointed as the first Prime Minister and also Foreign Minister of the newly established Philippine Republic.
+                            <br>3. He led the first cabinet of the republic until his resignation on May 7, 1899.
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. He is regarded as the "utak ng himagsikan" or "brain of the revolution" and is also considered as a national hero in the Philippines
+                            <br>2.He was to the revolutionary government the ideologist and moral voice
+                            <br>3. He form a government and they article is "Article 4 the government if the republic is to be popular, Representatives, alternative and responsible and shall exercise three distinct powers: namely, the legislative, the executive, and the judicial."
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/apolinario.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/3cyk2fjm" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Marcelo H. del Pilar</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Marcelo Hilario del Pilar y Gatmaitán</h3>
+                        <p class="meal-descript-about">Del Pilar was one of the leading figures of the Propaganda Movement, which aimed to bring reforms to the Philippines under Spanish colonial rule.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. He became the editor of La Solidaridad in 1889, the propaganda newspaper that became the primary voice for reformists seeking political and social change in the Philippines.
+                            <br>2. As a writer and editor, del Pilar used La Solidaridad to call for reforms such as the representation of Filipinos in the Spanish Cortes (parliament), the freedom of the press, and the removal of the Spanish friars’ excessive influence over Filipino affairs.
+                            <br>3. Del Pilar fiercely opposed the dominance of the Spanish clergy in the governance of the Philippines. He critiqued their control over political and educational systems, and promoted the separation of Church and State, a core belief that would later influence the goals of the Philippine Revolution.
+
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. His works helped form the intellectual basis for the Philippine Revolution, influencing key figures like José Rizal.
+                            <br>2. Through his writings, del Pilar inspired a sense of nationalism and the desire for Philippine independence.
+                            <br>3. A prominent member of the Freemasonry, del Pilar believed in the ideals of liberty, equality, and fraternity, and used these principles to unite Filipinos in their fight for independence.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/mercilo.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/mjur6p9p" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Macario Sakay </h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Macario Sakay y de León</h3>
+                        <p class="meal-descript-about">was a Filipino general who took part in the 1896 Philippine Revolution against the Spanish Empire and in the Philippine–American War.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. He became a revolutionary leader who fought against both Spanish and later American forces during the Philippine-American War
+                            <br>2. He was a prominent figure in the struggle for Philippine independence, leading the Katipunan's remnants after Bonifacio's death.
+                            <br>3. Sakay led the Tagalog Republic and continued Bonifacio's efforts for independence after the American takeover
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Sakay’s heroism is often overshadowed by more prominent leaders such as Aguinaldo and Bonifacio, but his role in resisting American forces is a crucial part of Philippine independence history
+                            <br>2. Sakay’s Guerrilla Warfare Against Americans - Sakay and his followers engaged in guerrilla warfare against American forces. His movements were part of the broader resistance by Filipinos who refused to accept American rule after the Philippine-American War ended.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/macario.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/muevchdd" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Emilio Aguinaldo</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Emilio Aguinaldo y Famy</h3>
+                        <p class="meal-descript-about">He was a key figure in the Philippine Revolution, the first president of the Philippines, and a leader of the Katipunan during the struggle against Spanish rule
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. Aguinaldo played a central role in the Philippine Revolution and was the first president of the newly established Republic of the Philippines. He declared Philippine independence on June 12, 1898, in Cavite
+                            <br>2.  His declaration of independence remains a significant moment in Philippine history. Despite later controversies surrounding his leadership
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Declaration of Philippine Independence - Emilio Aguinaldo declared the Philippines' independence from Spanish colonial rule in Kawit, Cavite. This momentous event marked the birth of the First Philippine Republic
+                            <br>2. The Philippine-American War - Following the Spanish-American War, the Philippines was ceded to the United States, and Aguinaldo led the Filipino forces in the Philippine-American War.
+                            <br>3.  Aguinaldo’s Capture and Subsequent Oath of Allegiance to the U.S. - Aguinaldo was captured by American forces in Palanan, Isabela. He swore an oath of allegiance to the United States, signaling the end of the armed resistance but later became an advocate for Philippine independence within the American-controlled government
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/emilio.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/3m66rp8w" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Andrés Bonifacio</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Andrés Bonifacio y de Castro</h3>
+                        <p class="meal-descript-about">You can edit here
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. Raised in poverty after the death of his parents, Bonifacio worked as a clerk and later as a laborer
+                            <br>2. He was largely self-taught, learning from reading books and working for different organizations, including the Katipunan, which would become central to his life’s mission
+                            <br>3. Bonifacio was the founder of the Katipunan (Kataas-taasan, Kagalang-galangang Katipunan ng mga Anak ng Bayan), a secret society aimed at achieving Philippine independence from Spanish rule
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Founding of the Katipunan (1892) - Bonifacio, alongside other founding members, established the Katipunan (Kataas-taasan, Kagalang-galangang Katipunan ng mga Anak ng Bayan).
+                            <br>2. The Cry of Balintawak (1896) - Bonifacio led the Katipunan in an uprising against Spanish authorities
+                            <br>3. Bonifacio’s Execution (1897) - After a series of conflicts within the revolutionary movement, Bonifacio was captured, tried, and executed by the forces of Emilio Aguinaldo
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/bonifacio.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/9mr9tshy" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">José Rizal</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About José Protasio Rizal Mercado y Alonso Realonda</h3>
+                        <p class="meal-descript-about">A polymath, Rizal excelled in various fields, including medicine, literature, and the arts
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>FACT </h3>
+                        <p><br>1. Publication of Noli Me Tangere (1887) - Rizal's first novel, Noli Me Tangere, was published in Berlin. The novel exposed the corruption and abuses of the Spanish colonial government, as well as the plight of the Filipino people under Spanish rule.
+                            <br>2. Rizal’s Exile to Dapitan (1892-1896) - After his Noli Me Tangere and El Filibusterismo were banned, Rizal was exiled to Dapitan (in present-day Zamboanga del Norte) by Spanish authorities. Despite his exile, he continued to advocate for reforms through education and peaceful means
+                            <br>3. Execution at Bagumbayan (1896) - Rizal was executed by a firing squad at Luneta, now known as Rizal Park, in Manila. His martyrdom sparked a greater sense of unity among Filipinos, leading to further resistance against Spanish rule. His death made him the symbol of the fight for independence.
+                        </p>
+                        <h3>INFORMATION</h3>
+                        <p><br>1. Noli Me Tangere (Touch Me Not) and El Filibusterismo (The Reign of Greed) his works about spanish corruption in the philipphines
+                            <br>2. the Liga Filipina, a political group that called for peace change for the islands. Nevertheless, Spanish officials were displeased and exiled Rizal to the island of Mindanao
+                            <br>3. His father is Filipino while is mother is a Chinese because the philipphines under spanish rule they suffered but the wealth is enormous allowed him to education and to expand it he go to europe.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/jose.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.facebook.com/profile.php?id=100069775689418" target="_blank" ><i class="	fab fa-facebook"></i></a>
+            <a href="" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="" target="_blank"><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024 Christian Pangit. All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>

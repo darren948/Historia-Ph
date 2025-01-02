@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign-Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar Styles */
+    .nav-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-bar .brand-name {
+      width: 50px;
+      height: 50px;
+    }
+
+    .menu-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-bar ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .menu-bar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu-bar ul li a:hover {
+      color: #ddd;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-bar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        width: 150px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .menu-bar ul.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Login Section */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-image: url(./img/loginBG.png);
+      background-size: cover;
+      background-position: center;
+      padding-top: 80px; /* To prevent overlap with navbar */
+    }
+
+    .login-box {
+      position: relative;
+      width: 400px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      backdrop-filter: blur(15px);
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    .form-group label {
+      display: block;
+      color: #fff;
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      height: 40px;
+      background: transparent;
+      border: 1px solid #fff;
+      outline: none;
+      border-radius: 5px;
+      font-size: 1em;
+      color: #fff;
+      padding: 0 10px;
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #000;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    .toggle-link {
+      color: #fff;
+      text-align: center;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .toggle-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 360px) {
+      .login-box {
+        width: 100%;
+        height: auto;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <img src="./img/solaris.webp" class="brand-name">
+    <div class="menu-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Guest</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Section -->
+  <section>
+    <div class="login-box">
+      <form id="login-form">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit">Login</button>
+        <p class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</p>
+      </form>
+
+      <form id="signup-form" style="display: none;">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+        <p class="toggle-link" onclick="toggleForms()">Already have an account? Login</p>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Toggle between Login and Sign-Up forms
+    function toggleForms() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+      signupForm.style.display = signupForm.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu-bar ul');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
